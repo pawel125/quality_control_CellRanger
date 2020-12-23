@@ -18,4 +18,4 @@ Programs run:
 1. Install Anaconda if you do not have, install FastQC and MultiQC and make it available on your $PATH, or edit the right rules in workflow/rules/bam_quality_control.smk
 2. Edit samples.yml to match you CellRanger output
 3. Download the right BED reference files for RSeQC from [here](https://sourceforge.net/projects/rseqc/files/BED/), for eg.  Human_Homo_Sapiens/hg38_RefSeq.bed.gz. Unpack it, make sure that chromosome naming matches your bam files. If not - correct it. Edit config.yml 
-3. If you are going to use HCP, edit workflow/cluster.yml and run_snakemake.sh according to your needs. Run `./run_snakemake.sh` Otherwise run `snakemake -j 1`.
+3. If you are going to use HPC, edit workflow/cluster.yml and run_snakemake.sh according to your needs. Run `./run_snakemake.sh` Otherwise run `snakemake -j 1`.
