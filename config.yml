@@ -1,0 +1,3 @@
+rseqc_bed_file:
+    mm10: ~/resources/rseqc/mm10_RefSeq.bed
+    GRCh38: ~/resources/rseqc/hg38_RefSeq.bed

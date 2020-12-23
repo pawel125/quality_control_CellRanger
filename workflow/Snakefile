@@ -1,0 +1,28 @@
+import pandas as pd
+import os
+
+os.makedirs("qc/rseqc", exist_ok=True)
+
+configfile: "config.yml"
+samples = pd.read_csv("samples.tsv", sep = "\t")
+include: "rules/bam_quality_control.smk"
+
+ref_genomes = dict(zip(samples.sample_id, samples.ref_genome))
+ref_bed_files = {
+    sample: config["rseqc_bed_file"][genome] 
+    for sample, genome 
+    in ref_genomes.items()}
+
+rule all:
+    input: 
+        "multiqc_report.html",
+        expand("qc/emptyDrops/{sample}.tsv", sample = samples.sample_id)
+
+rule emptydrops:
+    input: expand("single_cell_data/{{sample}}/outs/raw_feature_bc_matrix/{file}", file = ["barcodes.tsv.gz", "features.tsv.gz", "matrix.mtx.gz"])
+    output: "qc/emptyDrops/{sample}.tsv"
+    conda: "envs/dropletutils_env.yml"
+    params:
+        input = "single_cell_data/{sample}/outs/raw_feature_bc_matrix/"
+    shell: "Rscript workflow/scripts/findEmptyDrops.R --raw_feature_bc_matrix {params.input} --sample_id {wildcards.sample} --outdir qc/emptyDrops/"
+

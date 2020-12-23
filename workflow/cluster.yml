@@ -1,0 +1,40 @@
+__default__:
+    account: pkus
+    job_name: snake_job
+    mem: 10G
+    time: "200:0:0"
+    cpus: 1
+    output: outputs/slurm_%A.txt
+    partition: extuser
+fastqc:
+    job_name: fastqc
+    output: outputs/fastqc_%A.txt
+    cpus: 20
+mklink:
+    job_name: mklink
+    output: outputs/mklink_%A.txt
+    cpus: 1
+multiqc:
+    job_name: multiqc
+    output: outputs/multiqc_%A.txt
+    cpus: 5
+read_GC:
+    job_name: read_GC
+    output: outputs/read_GC_%A.txt
+    cpus: 5
+bam_stat:
+    job_name: bam_stat
+    output: outputs/bam_stat_%A.txt
+    cpus: 5
+tin:
+    job_name: tin
+    output: outputs/tin_%A.txt
+    cpus: 5
+genebody_coverage:
+    job_name: genebody_coverage
+    output: outputs/genebody_coverage_%A.txt
+    cpus: 5
+emptydrops:
+    job_name: emptydrops
+    output: outputs/emptydrops_%A.txt
+    cpus: 5

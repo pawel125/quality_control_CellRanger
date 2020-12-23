@@ -1,0 +1,5 @@
+sample_id	ref_genome	style	bam
+sample1	mm10	NCBI	single_cell_data/sample1/outs/possorted_genome_bam.bam
+sample2	GRCh38	NCBI	single_cell_data/sample2/outs/possorted_genome_bam.bam
+sample3	mm10	NCBI	single_cell_data/sample3/outs/possorted_genome_bam.bam
+sample4	mm10	NCBI	single_cell_data/sample4/outs/possorted_genome_bam.bam

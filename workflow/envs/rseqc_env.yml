@@ -1,0 +1,8 @@
+name: rseqc_env
+channels:
+  - conda-forge
+  - bioconda
+  - r
+dependencies:
+  - rseqc
+prefix: /home/pkus/programs/anaconda3/envs/rseqc_env

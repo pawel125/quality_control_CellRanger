@@ -1,0 +1,10 @@
+name: rseqc_env
+channels:
+  - conda-forge
+  - bioconda
+  - r
+dependencies:
+  - bioconductor-dropletutils
+  - r-tidyverse
+  - r-optparse
+prefix: /home/pkus/programs/anaconda3/envs/rseqc_env
